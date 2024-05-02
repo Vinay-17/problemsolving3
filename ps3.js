@@ -77,6 +77,55 @@ for(k of arr)
 console.log(sum)
 
 
+num = 10
+if (num >1) {
+    isPrime = true;
+    for (let i = 2; i <= num; i++) {
+        if (num % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+}
+if (isPrime) {
+    console.log("Nearest prime to", num, "is:", num);
+} else {
+    let lower = num - 1;
+    let upper = num + 1;
+    let primeFound = false;
+
+    while (!primeFound) {
+        let LowerPrime = true;
+        let UpperPrime = true;
+        if (lower >1) {
+             LowerPrime = true;
+            for (let i = 2; i <= Math.sqrt(lower); i++) {
+                if (lower % i === 0) {
+                    LowerPrime = false;
+                    break;
+                }
+            }
+        }
+        for (let i = 2; i <= Math.sqrt(upper); i++) {
+            if (upper % i === 0) {
+                UpperPrime = false;
+                break;
+            }
+        }
+
+        if (LowerPrime) {
+            console.log("Nearest prime to", num, "is:", lower);
+            primeFound = true;
+        } else if (UpperPrime) {
+            console.log("Nearest prime to", num, "is:", upper);
+            primeFound = true;
+        } else {
+            lower--;
+            upper++;
+        }
+    }
+}
+
 
 
 

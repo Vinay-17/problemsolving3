@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ID Card</title>
+<style>
+    .id-card {
+        width: 300px;
+        border: 2px solid #000;
+        padding: 20px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .profile-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="id-card" id="idCard">
+    <h2>ID Card</h2>
+    <img src="DHONI.webp" alt="Profile Picture" class="profile-img">
+    <div id="name"></div>
+    <div id="phoneNumber"></div>
+    <div id="bloodGroup"></div>
+    <div id="branch"></div>
+</div>
+
+<script>
+    // Function to create ID card
+    function createIDCard(name, phoneNumber, bloodGroup, branch) {
+        var idCardDiv = document.getElementById('idCard');
+        
+        var nameDiv = document.getElementById('name');
+        var phoneNumberDiv = document.getElementById('phoneNumber');
+        var bloodGroupDiv = document.getElementById('bloodGroup');
+        var branchDiv = document.getElementById('branch');
+        
+        nameDiv.textContent = "Name: " + name;
+        phoneNumberDiv.textContent = "Phone Number: " + phoneNumber;
+        bloodGroupDiv.textContent = "Blood Group: " + bloodGroup;
+        branchDiv.textContent = "Branch: " + branch;
+    }
+    createIDCard("MS DHONI", "1234567890", "O+", "CRICKET");
+</script>
+
+</body>
+</html>

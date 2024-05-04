@@ -1,3 +1,4 @@
+prompt=require(`prompt-sync`)();
 num =[1,2,3,4,5]
 for(k of num){
     for(i=1;i<=k;i++){
